@@ -28,35 +28,7 @@
    	 })
    }
    
-   // lightbox
 
-  const closeLightbox=document.querySelector(".close-lightbox");
-  const lightbox=document.querySelector(".lightbox");
-  const lightboxImage=lightbox.querySelector("img")
-     
-     lightbox.addEventListener("click",function(){
-     	if(event.target!=lightboxImage){
-     		lightbox.classList.remove("show");
-     	lightbox.classList.add("hide");
-     	}
-
-     })
-
-     closeLightbox.addEventListener("click",function(){
-     	lightbox.classList.remove("show");
-     	lightbox.classList.add("hide");
-     })
-
- const gallery=document.querySelector(".portfolio-gallery");
- const galleryItem=gallery.querySelectorAll(".item");
- 
- galleryItem.forEach(function(element){
- 	element.querySelector(".fa-plus").addEventListener("click",function(){
-     lightbox.classList.remove("hide");
-     lightbox.classList.add("show");
-     lightboxImage.src=element.querySelector("img").getAttribute("src")
- 	})
- })
 
  // header fixed
 
@@ -96,6 +68,23 @@
   hamBurger.addEventListener("click",function(){
         document.querySelector(".navbar").classList.toggle("show");
   })
+
+
+  //animation
+var test = document.getElementById("animation");
+
+var text = "Konrad Bieniek";
+var result = "";
+//Press rerun button to see effect
+window.addEventListener("load", (event) => {
+  for (let i = 0; i < text.length; i++) {
+    setTimeout(function () {
+      result += text[i];
+      test.innerHTML = result;
+    }, 180 * i);
+  }
+});
+
 
 
 
